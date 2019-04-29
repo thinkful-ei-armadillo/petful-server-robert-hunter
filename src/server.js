@@ -3,9 +3,11 @@
 const CatRouter = require('./cat/cat-router');
 const DogRouter = require('./dog/dog-router');
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 
 const app = express();
+app.use(cors());
 
 app.use('/api/cat', CatRouter);
 app.use('/api/dog', DogRouter);
