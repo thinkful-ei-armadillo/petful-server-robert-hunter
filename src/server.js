@@ -24,7 +24,6 @@ app.use(function(req, res, next) {
 // Catch-all Error handler
 // Add NODE_ENV check to prevent stacktrace leak
 app.use(function(err, req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', PORT);
   res.status(err.status || 500);
   res.json({
     message: err.message,
