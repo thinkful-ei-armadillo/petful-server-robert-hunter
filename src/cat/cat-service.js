@@ -1,5 +1,5 @@
 'use strict';
-const cats = require('./cats.json.js');
+const cats = require('./cats.js');
 
 const CatService = {
   getCat() {
