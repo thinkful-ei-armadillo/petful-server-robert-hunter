@@ -6,7 +6,6 @@ const express = require('express');
 const DogRouter = express.Router();
 
 DogRouter.route('/').get((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', { mode: 'no-cors' });
   res.json(DogService.getDog());
 });
 

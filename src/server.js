@@ -21,11 +21,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.use(function(req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', { mode: 'no-cors' });
-  next();
-});
-
 // Catch-all Error handler
 // Add NODE_ENV check to prevent stacktrace leak
 app.use(function(err, req, res, next) {
