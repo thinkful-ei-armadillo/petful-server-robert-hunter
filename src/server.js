@@ -5,14 +5,21 @@ const DogRouter = require('./dog/dog-router');
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const helmet = require('helmet');
+
+const { NODE_ENV, CLIENT_ORIGIN } = require('./config');
 
 const app = express();
-app.use(cors());
+app.use(
+  morgan(NODE_ENV === 'production' ? 'tiny' : 'common', {
+    skip: () => NODE_ENV === 'test'
+  })
+);
+app.use(cors({ origin: CLIENT_ORIGIN }));
+app.use(helmet());
 
 app.use('/api/cat', CatRouter);
 app.use('/api/dog', DogRouter);
-const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common';
-app.use(morgan(morganSetting));
 
 // Catch-all 404
 app.use(function(req, res, next) {
