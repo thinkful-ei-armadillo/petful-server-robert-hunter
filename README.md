@@ -1,26 +1,46 @@
-# Express Boilerplate!
+# Petful
 
-This is a boilerplate project used for starting new projects!
+**Application was made by Hunter Kreshock and Robert Nearents**
 
-## How do set up?
+[Demo](https://petful-app.now.sh/)   
+[Client Repo](https://github.com/thinkful-ei-armadillo/petful-client-robert-hunter)  
+[Server Repo](https://github.com/thinkful-ei-armadillo/petful-server-robert-hunter) 
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+*You don't need any credentials to demo our application.* 
+ 
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+## Summary      
 
-## Scripts
+This webApp is supposed to replicate an adoption website. The user can create a temporary username, select dogs/cats that they would like to adopt, and even see a full list of all the animals up for adoption.
 
-Start the application `npm start`
+## Getting Started  
+Client:    
+```
+git clone https://github.com/thinkful-ei-armadillo/petful-client-robert-hunter
+cd petful-client-robert-hunter
+npm install 
+```  
+Server:  
+```
+git clone https://github.com/thinkful-ei-armadillo/petful-server-robert-hunter 
+cd petful-server-robert-hunter
+npm install  
+npm run migrate  
+```  
 
-Start nodemon for the application `npm run dev`
+## API Endpoints  
+```
+GET /api/cat  
+GET /api/dog
+```
+## Tech Used  
+*Front-End:*  
+* React
 
-Run the tests in watch mode `npm test`
+*Back-End:*   
+* Node.js 
+* Express.js  
 
-## Deploying
-
-When your new project is ready for deployment, add a new heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+*Dev-Tools*  
+* ZEIT  
+* Heroku   
